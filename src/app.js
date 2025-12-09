@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import healthcheckRoute from "./routes/healthcheck.routes.js";
+import urlRoute from "./routes/url.routes.js";
 
 const app = express();
 
@@ -24,5 +25,7 @@ app.use(
 
 //routes
 app.use("/api/healthcheck", healthcheckRoute);
+
+app.use("/api/tinyUrl", urlRoute);
 
 export default app;
